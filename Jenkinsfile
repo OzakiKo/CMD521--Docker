@@ -18,7 +18,6 @@ pipeline {
                     echo "🧹 Cleaning up old Site container and image..."
                     docker stop site || true
                     docker rm site || true
-                    docker rmi macnaer/site || true
 
                     echo "🚀 Starting new Site container..."
                     docker run -d --name site --restart=always -p 0.0.0.0:80:80   macnaer/site
