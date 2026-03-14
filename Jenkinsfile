@@ -7,7 +7,7 @@ pipeline {
         stage("Create Site image") {
             steps {
                 echo '🧱 Building Site image ...'
-                sh "docker build --no-cache -t macnaer/site ."
+                sh "docker build --no-cache -t mariiashyman/site ."
             }
         }
 
@@ -20,7 +20,7 @@ pipeline {
                     docker rm site || true
 
                     echo "🚀 Starting new Site container..."
-                    docker run -d --name site --restart=always -p 0.0.0.0:80:80   macnaer/site
+                    docker run -d --name site --restart=always -p 0.0.0.0:80:80  mariiashyman/site
                 '''
             }
         }
